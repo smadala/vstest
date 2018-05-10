@@ -455,6 +455,9 @@ namespace Microsoft.TestPlatform.TestUtilities
                 Console.WriteLine("IntegrationTestBase.Execute: Path = {0}", vstestconsole.StartInfo.FileName);
                 Console.WriteLine("IntegrationTestBase.Execute: Arguments = {0}", vstestconsole.StartInfo.Arguments);
 
+                Stopwatch stopWatch = new Stopwatch();
+                stopWatch.Start();
+
                 vstestconsole.Start();
                 vstestconsole.BeginOutputReadLine();
                 vstestconsole.BeginErrorReadLine();
@@ -468,6 +471,20 @@ namespace Microsoft.TestPlatform.TestUtilities
                     // Ensure async buffers are flushed
                     vstestconsole.WaitForExit();
                 }
+
+                stopWatch.Stop();
+                TimeSpan ts = stopWatch.Elapsed;
+                string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
+                    ts.Hours, ts.Minutes, ts.Seconds,
+                    ts.Milliseconds / 10);
+                Console.WriteLine("IntegrationTestBase.Execute: elapsed time. " + elapsedTime);
+
+                stdError = stderrBuffer.ToString();
+                stdOut = stdoutBuffer.ToString();
+                exitCode = vstestconsole.ExitCode;
+
+                Console.WriteLine("IntegrationTestBase.Execute: stdError = {0}", stdError);
+                Console.WriteLine("IntegrationTestBase.Execute: stdOut = {0}", stdOut);
 
                 stdError = stderrBuffer.ToString();
                 stdOut = stdoutBuffer.ToString();

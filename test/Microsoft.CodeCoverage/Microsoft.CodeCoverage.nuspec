@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Microsoft.CodeCoverage</id>
+    <version>2.0.0</version>
+    <title>Microsoft.CodeCoverage</title>
+    <authors>Microsoft</authors>
+    <owners>Microsoft</owners>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <licenseUrl>http://www.microsoft.com/web/webpi/eula/net_library_eula_enu.htm</licenseUrl>
+    <iconUrl>http://go.microsoft.com/fwlink/?LinkID=288859</iconUrl>
+    <description>To collect code coverage from dotnet cli.</description>
+    <copyright>© Microsoft Corporation. All rights reserved.</copyright>
+    <projectUrl>https://github.com/microsoft/vstest/</projectUrl>
+    <tags>vstest visual-studio unittest testplatform mstest microsoft test testing</tags>
+    <dependencies>
+     
+    </dependencies>
+  </metadata>
+  <files>
+    <!--<file src="Microsoft.NET.Test.Sdk.props" target="buildMultiTargeting\" />
+    <file src="Microsoft.NET.Test.Sdk.props" target="build\netcoreapp1.0\" />
+    <file src="Microsoft.NET.Test.Sdk.targets" target="build\netcoreapp1.0\" />
+    <file src="Microsoft.NET.Test.Sdk.props" target="build\net45\" />
+    <file src="Microsoft.NET.Test.Sdk.targets" target="build\net45\" />
+    <file src="Microsoft.NET.Test.Sdk.props" target="build\uap10.0\" /> -->
+  </files>
+</package>

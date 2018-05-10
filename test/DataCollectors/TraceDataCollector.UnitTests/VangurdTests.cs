@@ -74,7 +74,7 @@ namespace Microsoft.VisualStudio.TraceCollector.UnitTests
                     c.GenerateCommandLine(VangurdCommand.Shutdown, this.sessionName, It.IsAny<string>(), It.IsAny<string>()))
                 .Returns(VangurdTests.GetShutdownCommand(this.sessionName));
             this.vanguard.Initialize(this.sessionName, this.configFileName, this.configXmlElement, this.dataCollectionLoggerMock.Object);
-            this.collectorUtilityMock.Setup(c => c.GetVanguardPath()).Returns(Path.Combine(Directory.GetCurrentDirectory(), "CodeCoverage.exe"));
+            this.collectorUtilityMock.Setup(c => c.GetVanguardPath()).Returns(Path.Combine(Directory.GetCurrentDirectory(),"CodeCoverage", "CodeCoverage.exe"));
         }
 
         [TestCleanup]

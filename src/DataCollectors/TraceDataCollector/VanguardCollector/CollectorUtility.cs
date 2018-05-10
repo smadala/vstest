@@ -32,7 +32,7 @@ namespace Microsoft.VisualStudio.TraceCollector
         /// <inheritdoc />
         public string GetVanguardDirectory()
         {
-            return Path.GetDirectoryName(typeof(CollectorUtility).GetTypeInfo().Assembly.Location);
+            return Path.Combine(Path.GetDirectoryName(typeof(CollectorUtility).GetTypeInfo().Assembly.Location), "CodeCoverage");
         }
     }
 }

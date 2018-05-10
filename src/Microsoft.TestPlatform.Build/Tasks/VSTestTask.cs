@@ -109,6 +109,12 @@ namespace Microsoft.TestPlatform.Build.Tasks
             set;
         }
 
+        public string VSTestTraceDataCollectorDirectory
+        {
+            get;
+            set;
+        }
+
         public override bool Execute()
         {
             var traceEnabledValue = Environment.GetEnvironmentVariable("VSTEST_BUILD_TRACE");
@@ -236,6 +242,11 @@ namespace Microsoft.TestPlatform.Build.Tasks
             if (!string.IsNullOrEmpty(this.VSTestBlame))
             {
                 allArgs.Add("--Blame");
+            }
+
+            if (!string.IsNullOrEmpty(this.VSTestTraceDataCollectorDirectory))
+            {
+                allArgs.Add("--testAdapterPath:" + ArgumentEscaper.HandleEscapeSequenceInArgForProcessStart(this.VSTestTraceDataCollectorDirectory));
             }
 
             return allArgs;
